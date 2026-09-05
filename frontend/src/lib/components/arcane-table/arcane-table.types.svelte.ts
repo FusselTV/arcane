@@ -170,3 +170,13 @@ export function shouldIgnoreTableRowClick(event: MouseEvent): boolean {
 	const target = event.target as HTMLElement | null;
 	return !!target?.closest('a, button, input, [role="checkbox"], [data-slot="checkbox"], [data-row-select-ignore]');
 }
+
+export type TableEmptyState = {
+	title: string;
+	description: string;
+	action?: {
+		label: string;
+		href?: string;
+		onclick?: () => void;
+	};
+};

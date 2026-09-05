@@ -17,6 +17,7 @@
 	import TableCheckbox from './arcane-table-checkbox.svelte';
 	import TableEmpty from './table-empty.svelte';
 	import { untrack, type Component, type Snippet } from 'svelte';
+	import type { TableEmptyState } from './arcane-table.types.svelte';
 	import type { Attachment } from 'svelte/attachments';
 	import { slide } from 'svelte/transition';
 	import { getTableRowsForItems } from './arcane-table.utils';
@@ -28,6 +29,7 @@
 		rowIndex,
 		selectedIdSet,
 		initialScrollTop = 0,
+		emptyContent,
 		columnsCount,
 		groupedRows = null,
 		groupIcon,
@@ -49,6 +51,7 @@
 		rowIndex: ReadonlyMap<string, { row: ArcaneRow<TData>; index: number }>;
 		selectedIdSet: ReadonlySet<string>;
 		initialScrollTop?: number;
+		emptyContent?: TableEmptyState;
 		columnsCount: number;
 		groupedRows?: GroupedData<TData>[] | null;
 		groupIcon?: (groupName: string) => Component;
@@ -298,7 +301,7 @@
 {#snippet emptyState()}
 	<Table.Row>
 		<Table.Cell colspan={columnsCount} class="h-48">
-			<TableEmpty class={cn('rounded-lg py-12', unstyled ? 'bg-transparent' : 'bg-card/30')} />
+			<TableEmpty state={emptyContent} class={cn('rounded-lg py-12', unstyled ? 'bg-transparent' : 'bg-card/30')} />
 		</Table.Cell>
 	</Table.Row>
 {/snippet}

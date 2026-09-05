@@ -3,6 +3,7 @@
 	import Skeleton from '#lib/components/ui/skeleton/skeleton.svelte';
 	import DropdownCard from '#lib/components/dropdown-card.svelte';
 	import TableEmpty from './table-empty.svelte';
+	import type { TableEmptyState } from './arcane-table.types.svelte';
 	import { m } from '#lib/paraglide/messages';
 	import { cn } from '#lib/utils';
 	import type { Snippet, Component } from 'svelte';
@@ -15,6 +16,7 @@
 	let {
 		table,
 		rowIndex,
+		emptyContent,
 		mobileCard,
 		mobileFieldVisibility,
 		groupedRows = null,
@@ -27,6 +29,7 @@
 	}: {
 		table: ArcaneSvelteTable<TData>;
 		rowIndex: ReadonlyMap<string, { row: ArcaneRow<TData>; index: number }>;
+		emptyContent?: TableEmptyState;
 		mobileCard: Snippet<[{ row: ArcaneRow<TData>; item: TData; mobileFieldVisibility: Record<string, boolean> }]>;
 		mobileFieldVisibility: Record<string, boolean>;
 		groupedRows?: GroupedData<TData>[] | null;
@@ -81,7 +84,10 @@
 
 {#snippet emptyState()}
 	<div class="p-4">
-		<TableEmpty class={cn('min-h-48 rounded-xl py-12', unstyled ? 'border-transparent bg-transparent' : 'bg-card/30')} />
+		<TableEmpty
+			state={emptyContent}
+			class={cn('min-h-48 rounded-xl py-12', unstyled ? 'border-transparent bg-transparent' : 'bg-card/30')}
+		/>
 	</div>
 {/snippet}
 
