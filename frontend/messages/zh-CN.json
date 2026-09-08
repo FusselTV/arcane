@@ -108,6 +108,7 @@
   "common_scope": "适用范围",
   "common_mountpoint": "挂载点",
   "common_labels": "标签",
+  "label_filter_hint": "键或键=值",
   "common_driver_options": "驱动选项",
   "common_back_to": "返回至{resource}",
   "common_back": "返回",
