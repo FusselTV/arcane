@@ -227,14 +227,11 @@ func (s *ProjectService) ListProjects(ctx context.Context, params pagination.Que
 }
 
 func applyProjectArchivedDBFilterInternal(query *gorm.DB, filterValue string) *gorm.DB {
-	switch strings.ToLower(strings.TrimSpace(filterValue)) {
-	case "true":
-		return query.Where("is_archived = ?", true)
-	case "all":
+	if strings.EqualFold(strings.TrimSpace(filterValue), "all") {
 		return query
-	default:
-		return query.Where("is_archived = ?", false)
 	}
+	archived, _ := utils.ParseBool(filterValue)
+	return query.Where("is_archived = ?", archived)
 }
 
 func applyProjectTagsDBFilterInternal(query *gorm.DB, filterValue string) *gorm.DB {
@@ -728,14 +725,11 @@ func buildProjectArchivedFilterAccessorInternal() pagination.FilterAccessor[proj
 	return pagination.FilterAccessor[project.Details]{
 		Key: "archived",
 		Fn: func(p project.Details, filterValue string) bool {
-			switch strings.ToLower(strings.TrimSpace(filterValue)) {
-			case "true":
-				return p.IsArchived
-			case "all":
+			if strings.EqualFold(strings.TrimSpace(filterValue), "all") {
 				return true
-			default:
-				return !p.IsArchived
 			}
+			archived, _ := utils.ParseBool(filterValue)
+			return p.IsArchived == archived
 		},
 	}
 }
