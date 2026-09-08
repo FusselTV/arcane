@@ -108,6 +108,7 @@
   "common_scope": "Scope",
   "common_mountpoint": "Mountpoint",
   "common_labels": "Labels",
+  "label_filter_hint": "nyckel eller nyckel=värde",
   "common_driver_options": "Inställningar för drivrutiner",
   "common_back_to": "Tillbaka till {resource}",
   "common_back": "Tillbaka",
