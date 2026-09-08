@@ -108,6 +108,7 @@
   "common_scope": "Bereik",
   "common_mountpoint": "Koppelpunt",
   "common_labels": "Labels",
+  "label_filter_hint": "sleutel of sleutel=waarde",
   "common_driver_options": "Chauffeur opties",
   "common_back_to": "Terug naar {resource}",
   "common_back": "Achterzijde",
