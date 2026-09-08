@@ -108,6 +108,7 @@
   "common_scope": "Πεδίο εφαρμογής",
   "common_mountpoint": "Σημείο προσάρτησης",
   "common_labels": "Ετικέτες",
+  "label_filter_hint": "κλειδί ή κλειδί=τιμή",
   "common_driver_options": "Επιλογές Οδηγού",
   "common_back_to": "Επιστροφή στο {resource}",
   "common_back": "Επιστροφή",
