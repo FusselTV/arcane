@@ -3272,6 +3272,7 @@
   "backups_trigger_scheduled": "予定",
   "backups_trigger_safety": "復元前の安全対策",
   "backups_destination_s3": "S3",
+  "backups_remote_unavailable": "リモートコピーは利用できません",
   "backups_destination_local_s3": "ローカル + S3",
   "s3_destinations_title": "S3 保存先",
   "s3_destinations_description": "Arcane およびボリュームのバックアップ用に、再利用可能な S3 互換の保存先を作成および管理します。",
