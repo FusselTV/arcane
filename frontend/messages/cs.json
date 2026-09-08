@@ -108,6 +108,7 @@
   "common_scope": "Rozsah",
   "common_mountpoint": "Připojovací bod",
   "common_labels": "Štítky",
+  "label_filter_hint": "klíč nebo klíč=hodnota",
   "common_driver_options": "Možnosti ovladače",
   "common_back_to": "Zpět na {resource}",
   "common_back": "Zpět",
