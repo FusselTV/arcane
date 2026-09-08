@@ -108,6 +108,7 @@
   "common_scope": "Amplekso",
   "common_mountpoint": "Muntopunkto",
   "common_labels": "Etikedoj",
+  "label_filter_hint": "ŝlosilo aŭ ŝlosilo=valoro",
   "common_driver_options": "Opcioj de la pelilo",
   "common_back_to": "Reen al {resource}",
   "common_back": "Reen",
