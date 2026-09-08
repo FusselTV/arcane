@@ -108,6 +108,7 @@
   "common_scope": "Phạm vi",
   "common_mountpoint": "Điểm gắn kết",
   "common_labels": "Nhãn",
+  "label_filter_hint": "khóa hoặc khóa=giá trị",
   "common_driver_options": "Tùy chọn driver",
   "common_back_to": "Quay lại {resource}",
   "common_back": "Quay lại",
