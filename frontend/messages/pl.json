@@ -3272,6 +3272,7 @@
   "backups_trigger_scheduled": "Zaplanowane",
   "backups_trigger_safety": "Środki bezpieczeństwa przed przywróceniem danych",
   "backups_destination_s3": "S3",
+  "backups_remote_unavailable": "Kopiowanie zdalne niedostępne",
   "backups_destination_local_s3": "Lokalnie + S3",
   "s3_destinations_title": "Miejsca docelowe S3",
   "s3_destinations_description": "Tworzenie i zarządzanie miejscami przechowywania zgodnymi ze standardem S3, które można wykorzystywać wielokrotnie, przeznaczonymi do tworzenia kopii zapasowych Arcane i woluminów.",
