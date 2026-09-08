@@ -3272,6 +3272,7 @@
   "backups_trigger_scheduled": "Προγραμματισμένο",
   "backups_trigger_safety": "Μέτρα ασφαλείας πριν από την επαναφορά",
   "backups_destination_s3": "S3",
+  "backups_remote_unavailable": "Η απομακρυσμένη αντιγραφή δεν είναι διαθέσιμη",
   "backups_destination_local_s3": "Τοπικό + S3",
   "s3_destinations_title": "Προορισμοί S3",
   "s3_destinations_description": "Δημιουργήστε και διαχειριστείτε επαναχρησιμοποιήσιμους προορισμούς αποθήκευσης συμβατούς με το S3 για αντίγραφα ασφαλείας του Arcane και των τόμων.",
