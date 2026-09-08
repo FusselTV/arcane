@@ -3272,6 +3272,7 @@
   "backups_trigger_scheduled": "Planerat",
   "backups_trigger_safety": "Säkerhetsåtgärder före återställning",
   "backups_destination_s3": "S3",
+  "backups_remote_unavailable": "Fjärrkopiering är inte tillgänglig",
   "backups_destination_local_s3": "Lokalt + S3",
   "s3_destinations_title": "S3-mål",
   "s3_destinations_description": "Skapa och hantera återanvändbara S3-kompatibla lagringsmål för Arcane- och volymsäkerhetskopior.",
