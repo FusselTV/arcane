@@ -3272,6 +3272,7 @@
   "backups_trigger_scheduled": "Planita",
   "backups_trigger_safety": "Antaŭ-restaŭra sekureco",
   "backups_destination_s3": "S3",
+  "backups_remote_unavailable": "Malproksima kopio ne disponeblas",
   "backups_destination_local_s3": "Loka + S3",
   "s3_destinations_title": "S3 Destinacioj",
   "s3_destinations_description": "Kreu kaj administru reuzeblajn S3-kongruajn stokadcelojn por Arcane- kaj volumaj sekurkopioj.",
