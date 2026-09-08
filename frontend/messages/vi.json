@@ -3272,6 +3272,7 @@
   "backups_trigger_scheduled": "Theo lịch trình",
   "backups_trigger_safety": "Các biện pháp an toàn trước khi khôi phục",
   "backups_destination_s3": "S3",
+  "backups_remote_unavailable": "Không thể sao chép từ xa",
   "backups_destination_local_s3": "Địa phương + S3",
   "s3_destinations_title": "Các điểm đến S3",
   "s3_destinations_description": "Tạo và quản lý các đích lưu trữ tương thích với S3 có thể tái sử dụng dành cho các bản sao lưu Arcane và bản sao lưu khối lượng.",
