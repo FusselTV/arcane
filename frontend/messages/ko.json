@@ -108,6 +108,7 @@
   "common_scope": "범위",
   "common_mountpoint": "마운트 경로",
   "common_labels": "레이블",
+  "label_filter_hint": "키 또는 키=값",
   "common_driver_options": "드라이버 옵션",
   "common_back_to": "{resource}(으)로 돌아가기",
   "common_back": "뒤로",
