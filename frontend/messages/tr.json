@@ -3272,6 +3272,7 @@
   "backups_trigger_scheduled": "Planlanmış",
   "backups_trigger_safety": "Geri yükleme öncesi güvenlik",
   "backups_destination_s3": "S3",
+  "backups_remote_unavailable": "Uzaktan kopyalama kullanılamıyor",
   "backups_destination_local_s3": "Yerel + S3",
   "s3_destinations_title": "S3 Hedefleri",
   "s3_destinations_description": "Arcane ve birim yedeklemeler için yeniden kullanılabilir, S3 uyumlu depolama hedefleri oluşturun ve yönetin.",
