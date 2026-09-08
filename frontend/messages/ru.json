@@ -108,6 +108,7 @@
   "common_scope": "Область",
   "common_mountpoint": "Точка монтирования",
   "common_labels": "Метки",
+  "label_filter_hint": "ключ или ключ=значение",
   "common_driver_options": "Параметры драйвера",
   "common_back_to": "Назад к {resource}",
   "common_back": "Назад",
