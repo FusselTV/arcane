@@ -1929,6 +1929,8 @@
   "git_managed_env_note": "The environment file (.env) can still be edited in Arcane to provide runtime configuration.",
   "git_from_git_repo": "From Git Repo",
   "git_sync_from_git": "Sync from Git",
+  "git_open_project_in_repository": "Open Project in Git",
+  "git_edit_file_in_repository": "Edit File in Git",
   "git_sync_file_limits_title": "Git Sync File Limits",
   "git_sync_file_limits_description": "Apply environment-wide caps when Arcane copies repository files during Git syncs. Use 0 to remove a cap.",
   "git_sync_max_files_label": "Max Synced Files",

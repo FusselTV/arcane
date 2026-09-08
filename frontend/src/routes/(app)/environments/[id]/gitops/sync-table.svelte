@@ -15,7 +15,7 @@
 	import { formatDateTimeShort } from '#lib/utils/formatting.js';
 	import { m } from '#lib/paraglide/messages.js';
 	import { gitOpsSyncService } from '#lib/services/gitops-sync-service.js';
-	import { toGitCommitUrl } from '#lib/utils/navigation.js';
+	import { toGitCommitUrl, toGitPathUrl } from '#lib/utils/navigation.js';
 	import {
 		EditIcon as PencilIcon,
 		StartIcon as PlayIcon,
@@ -210,10 +210,22 @@
 	</div>
 {/snippet}
 
-{#snippet PathCell({ value }: { value: any; item: GitOpsSync; row: ArcaneRow<GitOpsSync> })}
+{#snippet PathCell({ value, item }: { value: any; item: GitOpsSync; row: ArcaneRow<GitOpsSync> })}
+	{@const fileUrl = item.repository?.url ? toGitPathUrl(item.repository.url, item.branch, String(value), 'blob') : null}
 	<div class="flex items-center gap-1.5">
 		<FolderIcon class="size-3.5 text-muted-foreground" />
-		<code class="rounded bg-muted px-2 py-0.5 text-xs text-muted-foreground">{value}</code>
+		{#if fileUrl}
+			<a
+				href={fileUrl}
+				target="_blank"
+				rel="noopener noreferrer"
+				class="rounded bg-muted px-2 py-0.5 font-mono text-xs text-muted-foreground transition-colors hover:text-primary"
+			>
+				{value}
+			</a>
+		{:else}
+			<code class="rounded bg-muted px-2 py-0.5 text-xs text-muted-foreground">{value}</code>
+		{/if}
 	</div>
 {/snippet}
 

@@ -192,8 +192,11 @@ function toGitWebUrl(raw: string): string | null {
 			if (!parsed.hostname) return null;
 			const path = stripGitSuffix(parsed.pathname);
 			if (!path || path === '/') return null;
-			const protocol = parsed.protocol === 'http:' || parsed.protocol === 'https:' ? parsed.protocol : 'https:';
-			return `${protocol}//${parsed.hostname}${path}`;
+			const isWebProtocol = parsed.protocol === 'http:' || parsed.protocol === 'https:';
+			const protocol = isWebProtocol ? parsed.protocol : 'https:';
+			// An ssh:// port is the SSH port, not the forge's web port.
+			const host = isWebProtocol ? parsed.host : parsed.hostname;
+			return `${protocol}//${host}${path}`;
 		} catch {
 			return null;
 		}
@@ -208,6 +211,25 @@ function toGitWebUrl(raw: string): string | null {
 	return path ? `https://${host}/${path}` : null;
 }
 
+function pathSegmentForHost(hostname: string, kind: GitPathKind): string {
+	const host = hostname.toLowerCase();
+	if (host.includes('gitlab')) return `/-/${kind}/`;
+	// Bitbucket has no dedicated edit route; /src/ opens the file with its own edit action.
+	if (host.includes('bitbucket')) return '/src/';
+	if (host.includes('gitea') || host.includes('forgejo') || host.includes('codeberg')) {
+		return kind === 'edit' ? '/_edit/' : '/src/branch/';
+	}
+	return `/${kind}/`;
+}
+
+function encodePathSegments(value: string): string {
+	return value
+		.split('/')
+		.filter(Boolean)
+		.map((segment) => encodeURIComponent(segment))
+		.join('/');
+}
+
 export function toGitCommitUrl(repositoryUrl: string, commit: string): string | null {
 	const base = toGitWebUrl(repositoryUrl);
 	const trimmedCommit = commit.trim();
@@ -218,6 +240,23 @@ export function toGitCommitUrl(repositoryUrl: string, commit: string): string | 
 		const host = new URL(normalizedBase).hostname;
 		const segment = commitSegmentForHost(host);
 		return `${normalizedBase}${segment}${encodeURIComponent(trimmedCommit)}`;
+	} catch {
+		return null;
+	}
+}
+
+type GitPathKind = 'tree' | 'blob' | 'edit';
+
+export function toGitPathUrl(repositoryUrl: string, branch: string, path: string, kind: GitPathKind): string | null {
+	const base = toGitWebUrl(repositoryUrl);
+	const encodedBranch = encodePathSegments(branch.trim());
+	if (!base || !encodedBranch) return null;
+
+	const normalizedBase = trimTrailingSlash(base);
+	try {
+		const segment = pathSegmentForHost(new URL(normalizedBase).hostname, kind);
+		const encodedPath = encodePathSegments(path);
+		return `${normalizedBase}${segment}${encodedBranch}${encodedPath ? `/${encodedPath}` : ''}`;
 	} catch {
 		return null;
 	}

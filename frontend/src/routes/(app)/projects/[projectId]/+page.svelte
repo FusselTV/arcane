@@ -18,6 +18,7 @@
 		GlobeIcon,
 		CodeIcon,
 		ArrowsUpDownIcon,
+		ExternalLinkIcon,
 		SearchIcon
 	} from '#lib/icons/index.js';
 	import { type TabItem } from '#lib/components/tab-bar/index.js';
@@ -35,6 +36,7 @@
 	import { z } from 'zod/v4';
 	import { createForm } from '#lib/utils/settings.js';
 	import { m } from '#lib/paraglide/messages.js';
+	import { gitOpsComposeEditUrl, gitOpsFileEditUrl, gitOpsProjectUrl } from '#lib/utils/gitops.js';
 	import { toGitCommitUrl } from '#lib/utils/navigation.js';
 	import { toSafeHref } from '#lib/utils/navigation.js';
 	import { PersistedState } from 'runed';
@@ -293,6 +295,9 @@
 	// The override editor surfaces only when an override exists or the user asked
 	// to add one this session; otherwise the UI shows an "add override" affordance.
 	let overrideActive = $derived(overrideExists || overrideEditorRequested);
+	const gitProjectUrl = $derived(gitOpsProjectUrl(lifecycleSync));
+	const gitComposeEditUrl = $derived(gitOpsComposeEditUrl(lifecycleSync));
+	const gitOverrideEditUrl = $derived(gitOpsFileEditUrl(lifecycleSync, overrideFileName));
 	const projectWorkspaceLeadingRows = $derived([
 		{ key: 'compose', label: composeFileName, iconClass: 'text-blue-500', locked: true },
 		...(overrideActive
@@ -1369,7 +1374,8 @@
 			fileId: `project:${projectId}:compose`,
 			originalValue: serverComposeContent,
 			enableDiff: true,
-			editorContext: codeEditorContext
+			editorContext: codeEditorContext,
+			gitEditUrl: gitComposeEditUrl
 		} as const;
 	}
 
@@ -1383,7 +1389,8 @@
 			fileId: `project:${projectId}:override`,
 			originalValue: serverOverrideContent,
 			enableDiff: true,
-			editorContext: codeEditorContext
+			editorContext: codeEditorContext,
+			gitEditUrl: gitOverrideEditUrl
 		} as const;
 	}
 
@@ -1544,6 +1551,7 @@
 			value={selectedProjectWorkspaceMetadata.content ?? ''}
 			readOnly={true}
 			editorContext={codeEditorContext}
+			gitEditUrl={gitOpsFileEditUrl(lifecycleSync, relativePath)}
 		/>
 	{:else if projectWorkspaceContents[relativePath] === undefined}
 		<div class="flex h-full min-h-0 items-center justify-center text-muted-foreground">
@@ -1730,6 +1738,7 @@
 			originalValue={serverIncludeFiles[includeFile.relativePath] ?? ''}
 			enableDiff={true}
 			editorContext={codeEditorContext}
+			gitEditUrl={gitOpsFileEditUrl(lifecycleSync, includeFile.relativePath)}
 		/>
 	{:else if dirFile && loadedDirectoryFileContents[dirFile.relativePath] !== undefined}
 		<CodePanel
@@ -1775,18 +1784,30 @@
 						</div>
 					</Alert.Description>
 				</div>
-				{#if canUpdateProject}
-					<ArcaneButton
-						action="base"
-						tone="outline-primary"
-						loading={isLoading.syncing}
-						onclick={handleSyncFromGit}
-						icon={RefreshIcon}
-						customLabel={m.git_sync_from_git()}
-						loadingLabel={m.common_syncing()}
-						class="shrink-0"
-					/>
-				{/if}
+				<div class="flex shrink-0 flex-wrap items-center gap-2">
+					{#if gitProjectUrl}
+						<ArcaneButton
+							action="base"
+							tone="outline"
+							href={gitProjectUrl}
+							target="_blank"
+							rel="noopener noreferrer"
+							icon={ExternalLinkIcon}
+							customLabel={m.git_open_project_in_repository()}
+						/>
+					{/if}
+					{#if canUpdateProject}
+						<ArcaneButton
+							action="base"
+							tone="outline-primary"
+							loading={isLoading.syncing}
+							onclick={handleSyncFromGit}
+							icon={RefreshIcon}
+							customLabel={m.git_sync_from_git()}
+							loadingLabel={m.common_syncing()}
+						/>
+					{/if}
+				</div>
 			</div>
 		</Alert.Root>
 	{/if}
