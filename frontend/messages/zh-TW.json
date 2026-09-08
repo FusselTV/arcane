@@ -3272,6 +3272,7 @@
   "backups_trigger_scheduled": "已排定",
   "backups_trigger_safety": "還原前的安全措施",
   "backups_destination_s3": "S3",
+  "backups_remote_unavailable": "無法進行遠端複製",
   "backups_destination_local_s3": "本地 + S3",
   "s3_destinations_title": "S3 目標位置",
   "s3_destinations_description": "建立並管理適用於 Arcane 及卷宗備份的可重複使用、與 S3 相容的儲存目的地。",
