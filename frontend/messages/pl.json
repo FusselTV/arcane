@@ -108,6 +108,7 @@
   "common_scope": "Zakres",
   "common_mountpoint": "Punkt montowania",
   "common_labels": "Etykiety",
+  "label_filter_hint": "klucz lub klucz=wartość",
   "common_driver_options": "Opcje sterownika",
   "common_back_to": "Powrót do {resource}",
   "common_back": "Wstecz",
