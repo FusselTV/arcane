@@ -108,6 +108,7 @@
   "common_scope": "Hatáskör",
   "common_mountpoint": "Csatolási pont",
   "common_labels": "Címkék",
+  "label_filter_hint": "kulcs vagy kulcs=érték",
   "common_driver_options": "Driver opciók",
   "common_back_to": "Vissza ide: {resource}",
   "common_back": "Vissza",
