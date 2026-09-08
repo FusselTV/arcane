@@ -3272,6 +3272,7 @@
   "backups_trigger_scheduled": "Naplánováno",
   "backups_trigger_safety": "Bezpečnostní opatření před obnovením",
   "backups_destination_s3": "S3",
+  "backups_remote_unavailable": "Vzdálené kopírování není k dispozici",
   "backups_destination_local_s3": "Lokální + S3",
   "s3_destinations_title": "Cíle S3",
   "s3_destinations_description": "Vytvářejte a spravujte S3-kompatibilní úložiště, která lze opakovaně používat pro zálohy Arcane a svazků.",
