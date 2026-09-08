@@ -108,6 +108,7 @@
   "common_scope": "Kapsam",
   "common_mountpoint": "Bağlama Noktası",
   "common_labels": "Etiketler",
+  "label_filter_hint": "anahtar veya anahtar=değer",
   "common_driver_options": "Sürücü Seçenekleri",
   "common_back_to": "Geri dön {resource}",
   "common_back": "Geri",
