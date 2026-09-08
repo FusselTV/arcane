@@ -108,6 +108,7 @@
   "common_scope": "Gültigkeitsbereich",
   "common_mountpoint": "Einhängepunkt",
   "common_labels": "Labels",
+  "label_filter_hint": "Schlüssel oder Schlüssel=Wert",
   "common_driver_options": "Treiberoptionen",
   "common_back_to": "Zurück zu {resource}",
   "common_back": "Zurück",
