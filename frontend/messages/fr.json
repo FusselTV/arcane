@@ -108,6 +108,7 @@
   "common_scope": "Étendue",
   "common_mountpoint": "Point de montage",
   "common_labels": "Étiquettes",
+  "label_filter_hint": "clé ou clé=valeur",
   "common_driver_options": "Options du pilote",
   "common_back_to": "Retour à {resource}",
   "common_back": "Retour",
