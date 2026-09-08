@@ -108,6 +108,7 @@
   "common_scope": "Alcance",
   "common_mountpoint": "Punto de montaje",
   "common_labels": "Etiquetas",
+  "label_filter_hint": "clave o clave=valor",
   "common_driver_options": "Opciones de conductor",
   "common_back_to": "Volver a {resource}",
   "common_back": "Atrás",
