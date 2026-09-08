@@ -108,6 +108,7 @@
   "common_scope": "Omfang",
   "common_mountpoint": "Mountpoint",
   "common_labels": "Etiketter",
+  "label_filter_hint": "nøgle eller nøgle=værdi",
   "common_driver_options": "Driver Indstillinger",
   "common_back_to": "Tilbage til {resource}",
   "common_back": "Tilbage",
