@@ -3272,6 +3272,7 @@
   "backups_trigger_scheduled": "Planlagt",
   "backups_trigger_safety": "Sikkerhedsforanstaltninger før gendannelse",
   "backups_destination_s3": "S3",
+  "backups_remote_unavailable": "Fjernkopiering er ikke tilgængelig",
   "backups_destination_local_s3": "Lokalt + S3",
   "s3_destinations_title": "S3-destinationer",
   "s3_destinations_description": "Opret og administrer genanvendelige, S3-kompatible lagringsdestinationer til Arcane- og volumenbackups.",
