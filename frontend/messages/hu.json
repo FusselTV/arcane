@@ -3272,6 +3272,7 @@
   "backups_trigger_scheduled": "Tervezett",
   "backups_trigger_safety": "A visszaállítás előtti biztonsági intézkedések",
   "backups_destination_s3": "S3",
+  "backups_remote_unavailable": "A távoli másolás nem érhető el",
   "backups_destination_local_s3": "Helyi + S3",
   "s3_destinations_title": "S3-célhelyek",
   "s3_destinations_description": "Hozzon létre és kezeljen újrafelhasználható, S3-kompatibilis tárolási célhelyeket az Arcane-hez és a kötetmentésekhez.",
