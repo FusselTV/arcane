@@ -3272,6 +3272,7 @@
   "backups_trigger_scheduled": "Запланировано",
   "backups_trigger_safety": "Меры безопасности перед восстановлением",
   "backups_destination_s3": "S3",
+  "backups_remote_unavailable": "Удаленное копирование недоступно",
   "backups_destination_local_s3": "Локальное хранилище + S3",
   "s3_destinations_title": "Расположения S3",
   "s3_destinations_description": "Создавайте и управляйте многоразовыми хранилищами, совместимыми с S3, для резервного копирования Arcane и томов.",
