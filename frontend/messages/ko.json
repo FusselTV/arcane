@@ -3272,6 +3272,7 @@
   "backups_trigger_scheduled": "예정",
   "backups_trigger_safety": "복원 전 안전 조치",
   "backups_destination_s3": "S3",
+  "backups_remote_unavailable": "원격 복사 불가",
   "backups_destination_local_s3": "로컬 + S3",
   "s3_destinations_title": "S3 저장소",
   "s3_destinations_description": "Arcane 및 볼륨 백업을 위해 재사용 가능한 S3 호환 스토리지 저장소를 생성하고 관리합니다.",
