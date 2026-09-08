@@ -108,6 +108,7 @@
   "common_scope": "範圍",
   "common_mountpoint": "掛載點",
   "common_labels": "標籤",
+  "label_filter_hint": "鍵或鍵=值",
   "common_driver_options": "驅動選項",
   "common_back_to": "返回至 {resource}",
   "common_back": "返回",
