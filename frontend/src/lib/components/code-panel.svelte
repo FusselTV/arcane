@@ -82,16 +82,19 @@
 	}
 
 	function handleEditorKeydown(event: KeyboardEvent) {
-		if (!editUrl || event.key !== 'Enter' || !isEditorText(event.target)) return;
+		if (!editUrl || event.key !== 'Enter') return;
+		if (event.target !== event.currentTarget && !isEditorText(event.target)) return;
 		event.preventDefault();
 		window.open(editUrl, '_blank', 'noopener,noreferrer');
 	}
 </script>
 
 {#snippet editorBody()}
+	<!-- svelte-ignore a11y_no_noninteractive_tabindex -->
 	<div
 		class="{effectiveAutoHeight ? '' : 'relative flex-1'} min-h-0 w-full min-w-0 {editUrl ? 'cursor-pointer' : ''}"
 		role={editUrl ? 'link' : undefined}
+		tabindex={editUrl ? 0 : undefined}
 		title={editUrl ? m.git_edit_file_in_repository() : undefined}
 		onclick={handleEditorClick}
 		onkeydown={handleEditorKeydown}
