@@ -108,6 +108,7 @@
   "common_scope": "Ambito",
   "common_mountpoint": "Punto di mount",
   "common_labels": "Etichette",
+  "label_filter_hint": "chiave o chiave=valore",
   "common_driver_options": "Opzioni Driver",
   "common_back_to": "Torna a {resource}",
   "common_back": "Indietro",
