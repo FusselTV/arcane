@@ -15,7 +15,7 @@
 	import { formatDateTimeShort } from '#lib/utils/formatting.js';
 	import { m } from '#lib/paraglide/messages.js';
 	import { gitOpsSyncService } from '#lib/services/gitops-sync-service.js';
-	import { toGitCommitUrl, toGitPathUrl } from '#lib/utils/navigation.js';
+	import { toGitRouteUrl } from '#lib/utils/navigation.js';
 	import {
 		EditIcon as PencilIcon,
 		StartIcon as PlayIcon,
@@ -211,7 +211,7 @@
 {/snippet}
 
 {#snippet PathCell({ value, item }: { value: any; item: GitOpsSync; row: ArcaneRow<GitOpsSync> })}
-	{@const fileUrl = item.repository?.url ? toGitPathUrl(item.repository.url, item.branch, String(value), 'blob') : null}
+	{@const fileUrl = item.repository?.url ? toGitRouteUrl(item.repository.url, 'blob', item.branch, String(value)) : null}
 	<div class="flex items-center gap-1.5">
 		<FolderIcon class="size-3.5 text-muted-foreground" />
 		{#if fileUrl}
@@ -247,7 +247,7 @@
 
 {#snippet CommitCell({ value, item }: { value: any; item: GitOpsSync; row: ArcaneRow<GitOpsSync> })}
 	{#if value}
-		{@const commitUrl = item.repository?.url ? toGitCommitUrl(item.repository.url, String(value)) : null}
+		{@const commitUrl = item.repository?.url ? toGitRouteUrl(item.repository.url, 'commit', String(value)) : null}
 		<div class="flex items-center gap-1.5">
 			<HashIcon class="size-3.5 text-muted-foreground" />
 			{#if commitUrl}

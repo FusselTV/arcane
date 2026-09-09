@@ -37,8 +37,7 @@
 	import { createForm } from '#lib/utils/settings.js';
 	import { m } from '#lib/paraglide/messages.js';
 	import { gitOpsComposeEditUrl, gitOpsFileEditUrl, gitOpsProjectUrl } from '#lib/utils/gitops.js';
-	import { toGitCommitUrl } from '#lib/utils/navigation.js';
-	import { toSafeHref } from '#lib/utils/navigation.js';
+	import { toGitRouteUrl, toSafeHref } from '#lib/utils/navigation.js';
 	import { PersistedState } from 'runed';
 	import { useUrlTab } from '#lib/hooks/use-url-tab.svelte.js';
 	import ComposeFileEditorPanel from '#lib/components/compose-file-editor-panel.svelte';
@@ -2044,7 +2043,9 @@
 			{/if}
 
 			{#if project.lastSyncCommit}
-				{@const commitUrl = project.gitRepositoryURL ? toGitCommitUrl(project.gitRepositoryURL, project.lastSyncCommit) : null}
+				{@const commitUrl = project.gitRepositoryURL
+					? toGitRouteUrl(project.gitRepositoryURL, 'commit', project.lastSyncCommit)
+					: null}
 				<div class="mt-1 flex flex-wrap items-center gap-4 text-xs text-muted-foreground">
 					<div class="flex items-center gap-1.5">
 						<span class="hidden sm:inline">{m.commit()}:</span>
